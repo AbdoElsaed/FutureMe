@@ -15,7 +15,8 @@ const ThemeToggle = ({ themeColor, setThemeColor }) => {
         title={
           themeColor === "dark" ? "switch to light mode" : "switch to dark mode"
         }
-        className={styles.themeToggleBtn}
+        // className={styles.themeToggleBtn}
+        style={{ border: '2px solid chocolate' }}
         aria-label="Theme Toggle"
         onClick={handleClick}
       >

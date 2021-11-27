@@ -34,7 +34,7 @@ const SingleLetter = ({ id }) => {
           </Typography>
           <div className={styles.body}>{msg.msg}</div>
           <Typography
-            className={styles.footerDate}
+            style={{ marginTop: '20px' }}
             gutterBottom
             variant="p"
             component="div"
