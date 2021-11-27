@@ -41,7 +41,7 @@ const Header = ({ themeColor, setThemeColor }) => {
           <ThemeToggle themeColor={themeColor} setThemeColor={setThemeColor} />
         </div>
         <div className={styles.githubLink} title="github">
-          <Link href="/">
+          <Link href="https://github.com/AbdoElsaed/FutureMe">
             <a>
               <GitHubIcon
                 className={mode === "dark" ? styles.darkIcon : styles.lightIcon}
