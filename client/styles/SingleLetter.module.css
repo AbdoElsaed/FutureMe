@@ -1,0 +1,13 @@
+.container {
+    margin: 50px;
+    display: flex;
+}
+.body {
+    max-width: 900px;
+    font-size: 18px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: pre-wrap;
+}
+.footerDate {
+    margin-top: 20px;
+}

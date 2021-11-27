@@ -1,0 +1,63 @@
+.headerContainerMobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 10px;
+  max-height: 90px;
+}
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 30px;
+  max-height: 90px;
+}
+.logoContainer {
+  margin: 0;
+  overflow: hidden;
+}
+
+.themeToggle {
+  margin-top: 0px;
+}
+.logo {
+  -webkit-transform: scaleY(2);
+  -moz-transform: scaleY(2);
+  -ms-transform: scaleY(2);
+  -o-transform: scaleY(2);
+  transform: scaleY(2);
+}
+.leftSection,
+.rightSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.publicLink {
+  margin-left: 20px;
+}
+.publicLinkMobile {
+  margin-left: 10px;
+}
+.darkFont {
+  color: rgb(190, 188, 188);
+  font-weight: 600;
+  text-decoration: none;
+}
+.lightFont {
+  color: #444;
+  font-weight: 600;
+  text-decoration: none;
+}
+.githubLink {
+  margin-left: 25px;
+}
+.darkIcon {
+  color: #ccc;
+  font-size: 41px;
+}
+.lightIcon {
+  color: #333;
+  font-size: 41px;
+}
