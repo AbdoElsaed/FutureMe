@@ -14,7 +14,6 @@ const Letters = () => {
       const { msgs } = await res.json();
       setLoading(false);
       setMsgs(msgs);
-      console.log(msgs);
     })();
   }, []);
   return (
