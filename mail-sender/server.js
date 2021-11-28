@@ -20,6 +20,9 @@ const mailerRoutes = require("./routes/mailer");
 const baseRoute = "/api/v1/";
 const generateApiRoute = (route) => `${baseRoute}${route}`;
 
+app.get('/', (req, res) => {
+    return res.send('FutureMe Mailer API');
+})
 app.use(generateApiRoute("mailer"), mailerRoutes);
 
 
