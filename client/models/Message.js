@@ -28,6 +28,10 @@ const MessageSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
+    emailSent: {
+      type: Boolean,
+      default: false
+    }
   },
   { timestamps: true }
 );
