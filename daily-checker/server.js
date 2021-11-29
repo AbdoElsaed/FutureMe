@@ -6,8 +6,8 @@ const { Message } = require("./db/models/Message");
 const { getTodayMsgs } = require("./services/Message.js");
 const { sendEmail } = require("./services/Mailer.js");
 
-// run cron job every day at 12 am
-cron.schedule("0 0 * * *", async () => {
+// run cron job every day at 12 pm
+cron.schedule("0 12 * * *", async () => {
   const msgs = await getTodayMsgs();
   if (!msgs.length) {
     return console.log("there isn't any message today!");
