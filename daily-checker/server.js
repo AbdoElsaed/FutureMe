@@ -3,11 +3,11 @@ require("dotenv").config();
 require("./db/mongoose.js");
 
 const { Message } = require("./db/models/Message");
-const { getTodayMsgs } = require("./services/Message.js");
-const { sendEmail } = require("./services/Mailer.js");
+const { getTodayMsgs } = require("./services/db.js");
+const { send } = require("./services/Mailer");
 
 // run cron job every day at 12 pm
-cron.schedule("0 12 * * *", async () => {
+cron.schedule("* * * * *", async () => {
   const msgs = await getTodayMsgs();
   if (!msgs.length) {
     return console.log("there isn't any message today!");
@@ -19,7 +19,7 @@ cron.schedule("0 12 * * *", async () => {
       receiver: el.email,
       writingDate: el.createdAt,
     };
-    const res = await sendEmail(d);
+    const res = await send(d);
     if (res) {
       await Message.findByIdAndUpdate(el._id, { emailSent: true });
     }
