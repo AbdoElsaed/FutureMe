@@ -12,7 +12,7 @@ const style = {
   width: isMobile ? "95%" : "60%",
   bgcolor: "background.paper",
   boxShadow: 24,
-  //   p: 4,
+  p: 2,
 };
 
 const Letter = ({ open, setOpen, handleClose, msg, handleMsg }) => {
