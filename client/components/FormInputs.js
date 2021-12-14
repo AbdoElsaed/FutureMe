@@ -21,6 +21,8 @@ import { isMobile } from "react-device-detect";
 import { useSnackbar } from "notistack";
 import { LoadingButton } from "@mui/lab";
 
+import LetterModal from "./modals/Letter";
+
 const FormInputs = () => {
   const theme = useTheme().palette.mode;
 
@@ -32,12 +34,16 @@ const FormInputs = () => {
   const [emailErrorText, setEmailErrorText] = useState("");
 
   const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     document.getElementById("msg").focus();
   }, []);
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleMsg = (e) => {
     setMsg(e.target.value);
@@ -152,11 +158,12 @@ const FormInputs = () => {
     >
       <TextField
         id="msg"
-        label="Message"
+        label="Letter"
         multiline
-        rows={5}
+        rows={2}
         value={msg}
         onChange={handleMsg}
+        onClick={handleOpen}
         style={{ width: "350px" }}
         // inputRef={(input) => input && input.focus()}
       />
@@ -215,6 +222,7 @@ const FormInputs = () => {
       >
         Send to your future self
       </LoadingButton>
+      <LetterModal open={open} setOpen={setOpen} handleClose={handleClose} msg={msg} handleMsg={handleMsg} />
     </Stack>
   );
 };

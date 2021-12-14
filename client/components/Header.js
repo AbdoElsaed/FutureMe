@@ -31,7 +31,7 @@ const Header = ({ themeColor, setThemeColor }) => {
         <div className={isMobile ? styles.publicLinkMobile : styles.publicLink}>
           <Link href="/public">
             <a className={mode === "dark" ? styles.darkFont : styles.lightFont}>
-              Public Messages
+              Public Letters
             </a>
           </Link>
         </div>
