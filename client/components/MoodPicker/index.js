@@ -36,7 +36,7 @@ const MoodPicker = ({ mood, setMood }) => {
             id={elm.name}
             title={elm.name}
             onClick={(e) => handleMoodChange(elm.name, e)}
-            className={`${styles.icon}`}
+            className={styles.icon}
             icon={elm.icon}
           />
         ))}
