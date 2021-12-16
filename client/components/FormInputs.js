@@ -170,7 +170,7 @@ const FormInputs = () => {
         style={{ width: "350px" }}
         // inputRef={(input) => input && input.focus()}
       />
-      {/* <MoodPicker mood={mood} setMood={setMood} /> */}
+      <MoodPicker mood={mood} setMood={setMood} />
       {/* <TextField
         id="date"
         label="Deliver On"
