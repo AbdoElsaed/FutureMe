@@ -30,14 +30,14 @@ const MoodPicker = ({ mood, setMood }) => {
         {mood !== "" ? `${mood[0].toUpperCase()}${mood.slice(1)}` : "Your current mood:"}
       </div>
       <div className={styles.iconsContainer}>
-        {elements.map((elm) => (
+        {elements.map((elem) => (
           <FontAwesomeIcon
-            key={elm.name}
-            id={elm.name}
-            title={elm.name}
-            onClick={(e) => handleMoodChange(elm.name, e)}
+            key={elem.name}
+            id={elem.name}
+            title={elem.name}
+            onClick={(e) => handleMoodChange(elem.name, e)}
             className={styles.icon}
-            icon={elm.icon}
+            icon={elem.icon}
           />
         ))}
       </div>
