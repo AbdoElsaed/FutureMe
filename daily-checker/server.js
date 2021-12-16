@@ -18,6 +18,7 @@ cron.schedule("0 0 * * *", async () => {
       deliveryDate: el.date,
       receiver: el.email,
       writingDate: el.createdAt,
+      mood: el.mood
     };
     const res = await send(d);
     if (res) {
