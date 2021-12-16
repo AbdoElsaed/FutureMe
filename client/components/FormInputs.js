@@ -170,7 +170,6 @@ const FormInputs = () => {
         style={{ width: "350px" }}
         // inputRef={(input) => input && input.focus()}
       />
-      <MoodPicker mood={mood} setMood={setMood} />
       {/* <TextField
         id="date"
         label="Deliver On"
@@ -216,6 +215,7 @@ const FormInputs = () => {
         control={<Switch checked={isPublic} onChange={handlePublicSwitch} />}
         label="Public"
       />
+      <MoodPicker mood={mood} setMood={setMood} />
       <LoadingButton
         style={{ fontWeight: 500 }}
         variant={theme === "dark" ? "outlined" : "contained"}
