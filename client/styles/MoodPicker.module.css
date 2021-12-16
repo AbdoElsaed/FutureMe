@@ -1,0 +1,21 @@
+.moodDesc {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    color: chocolate;
+    transition: all 0.5s ease-in-out;
+}
+.iconsContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.icon {
+    font-size: 35px;
+    color:#548ad1cb;
+    /* margin-left: 20px; */
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}

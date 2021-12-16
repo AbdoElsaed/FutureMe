@@ -22,6 +22,7 @@ import { useSnackbar } from "notistack";
 import { LoadingButton } from "@mui/lab";
 
 import LetterModal from "./modals/Letter";
+import MoodPicker from "./MoodPicker";
 
 const FormInputs = () => {
   const theme = useTheme().palette.mode;
@@ -35,6 +36,7 @@ const FormInputs = () => {
 
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
+  const [mood, setMood] = useState("");
 
   useEffect(() => {
     document.getElementById("msg").focus();
@@ -105,6 +107,7 @@ const FormInputs = () => {
       date,
       email,
       isPublic,
+      mood
     };
     const response = await fetch("/api/message", {
       method: "POST",
@@ -167,6 +170,7 @@ const FormInputs = () => {
         style={{ width: "350px" }}
         // inputRef={(input) => input && input.focus()}
       />
+      <MoodPicker mood={mood} setMood={setMood} />
       {/* <TextField
         id="date"
         label="Deliver On"
