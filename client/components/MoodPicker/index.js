@@ -19,7 +19,7 @@ const MoodPicker = ({ mood, setMood }) => {
   const handleMoodChange = (v, e) => {
     setMood(v);
     elements.forEach((i) => {
-      document.getElementById(i.name).style.color = "#548ad1cb";
+      document.getElementById(i.name).style.color = "#2375e0e8";
     });
     document.getElementById(v).style.color = "chocolate";
   };
