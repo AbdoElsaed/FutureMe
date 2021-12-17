@@ -107,7 +107,7 @@ const FormInputs = () => {
       date,
       email,
       isPublic,
-      mood
+      mood,
     };
     const response = await fetch("/api/message", {
       method: "POST",
@@ -212,6 +212,7 @@ const FormInputs = () => {
         helperText={emailErrorText}
       />
       <FormControlLabel
+        style={{ maxWidth: "100px" }}
         control={<Switch checked={isPublic} onChange={handlePublicSwitch} />}
         label="Public"
       />
@@ -226,7 +227,13 @@ const FormInputs = () => {
       >
         Send to your future self
       </LoadingButton>
-      <LetterModal open={open} setOpen={setOpen} handleClose={handleClose} msg={msg} handleMsg={handleMsg} />
+      <LetterModal
+        open={open}
+        setOpen={setOpen}
+        handleClose={handleClose}
+        msg={msg}
+        handleMsg={handleMsg}
+      />
     </Stack>
   );
 };
