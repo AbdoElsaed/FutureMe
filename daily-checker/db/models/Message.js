@@ -31,6 +31,10 @@ const MessageSchema = new mongoose.Schema(
     emailSent: {
       type: Boolean,
       default: false
+    },
+    mood: {
+      type: String,
+      required: false
     }
   },
   { timestamps: true }

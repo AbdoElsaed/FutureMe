@@ -5,8 +5,7 @@ const send = async (d) => {
     const { receiver, msg, deliveryDate, writingDate, mood } = d;
     const d1 = new Date(writingDate).toLocaleString().split(",")[0];
     const d2 = new Date(deliveryDate).toLocaleString().split(",")[0];
-    const subject = `a message from your old self at ${new Date(writingDate).toLocaleString()}`;
-    const moodLine = mood !== "" ? `Sincerely, \n your ${mood} version` : "";
+    const subject = `a message from your old ${mood.length ? mood : ""} self at ${new Date(writingDate).toLocaleString()}`;
     const footer = `${d1} → ${d2}`;
 
     const mailOptions = {
@@ -14,7 +13,7 @@ const send = async (d) => {
       to: receiver,
       subject,
       template: "email",
-      context: { msg, footer, moodLine },
+      context: { msg, footer },
     };
 
     const res = await transporter.sendMail(mailOptions);
