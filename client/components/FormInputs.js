@@ -184,6 +184,7 @@ const FormInputs = () => {
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         {isMobile ? (
           <MobileDatePicker
+            disablePast
             label="Deliver On"
             inputFormat="MM/dd/yyyy"
             value={date}
@@ -192,6 +193,7 @@ const FormInputs = () => {
           />
         ) : (
           <DesktopDatePicker
+            disablePast
             label="Deliver On"
             inputFormat="MM/dd/yyyy"
             value={date}
