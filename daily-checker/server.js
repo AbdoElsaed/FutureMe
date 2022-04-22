@@ -1,28 +1,29 @@
-const cron = require("node-cron");
+const express = require("express");
+var cors = require("cors");
 require("dotenv").config();
 require("./db/mongoose.js");
 
-const { Message } = require("./db/models/Message");
-const { getTodayMsgs } = require("./services/db.js");
-const { send } = require("./services/Mailer");
+const app = express();
+app.use(cors());
 
-// run cron job every day at 12am & 8pm
-cron.schedule("00 00,20 * * *", async () => {
-  const msgs = await getTodayMsgs();
-  if (!msgs.length) {
-    return console.log("there isn't any message today!");
+const port = 5000;
+const { Message } = require("./db/models/Message");
+const { addMsgToQueue } = require("./services/Queue/index.js");
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.post("/addToQueue", async (req, res) => {
+  try {
+    const msg = await Message.create(req.body);
+    let data = await addMsgToQueue({ msgId: msg._id, body: req.body });
+    return res.status(201).json({ status: "success", data });
+  } catch (err) {
+    console.error(err);
+    return res.status(400).json({ status: "failure", err });
   }
-  msgs.map(async (el) => {
-    const d = {
-      msg: el.msg,
-      deliveryDate: el.date,
-      receiver: el.email,
-      writingDate: el.createdAt,
-      mood: el.mood
-    };
-    const res = await send(d);
-    if (res) {
-      await Message.findByIdAndUpdate(el._id, { emailSent: true });
-    }
-  });
+});
+
+app.listen(port, () => {
+  console.log(`app listening on port ${port}`);
 });

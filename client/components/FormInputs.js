@@ -109,10 +109,11 @@ const FormInputs = () => {
       isPublic,
       mood,
     };
-    const response = await fetch("/api/message", {
+    console.log('before!!!!!!!!');
+    const response = await fetch("http://localhost:5000/addToQueue", {
       method: "POST",
       headers: {
-        "COntent-Type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });

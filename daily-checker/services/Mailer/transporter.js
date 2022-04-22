@@ -5,6 +5,9 @@ const { resolve } = require("path");
 // initialize nodemailer
 var transporter = createTransport({
   service: "gmail",
+  host: 'smtp.gmail.com',
+  secure: false,
+  requireTLS: true,
   auth: {
     user: process.env.GMAIL_ACC,
     pass: process.env.GMAIL_PASS,
