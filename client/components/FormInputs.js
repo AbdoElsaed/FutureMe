@@ -110,7 +110,7 @@ const FormInputs = () => {
       mood,
     };
     console.log('before!!!!!!!!');
-    const response = await fetch("http://localhost:5000/addToQueue", {
+    const response = await fetch("https://futureme-mq.herokuapp.com/addToQueue", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

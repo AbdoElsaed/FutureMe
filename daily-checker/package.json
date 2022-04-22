@@ -1,7 +1,7 @@
 {
-  "name": "daily-checker",
+  "name": "futureme-mq",
   "version": "1.0.0",
-  "description": "",
+  "description": "future me message queue system with a mailer service",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
