@@ -6,12 +6,16 @@ require("./db/mongoose.js");
 const app = express();
 app.use(cors());
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 const { Message } = require("./db/models/Message");
 const { addMsgToQueue } = require("./services/Queue/index.js");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+  res.send('future-me message queue');
+})
 
 app.post("/addToQueue", async (req, res) => {
   try {
